@@ -138,3 +138,37 @@
         a = RedFlagCar()
         a.drive()
     ```
+11. **Global vs Local variables** 
+    - Global variables are declared outside of any function and can be accessed from any part of the code. Local variables are declared inside a function and can only be accessed within that function.
+Example:
+
+```python
+x = 10  # Global variable
+
+def my_function():
+    y = 20  # Local variable
+    print("Inside function: x =", x)  # Accessing global variable
+    print("Inside function: y =", y)  # Accessing local variable
+
+my_function()
+print("Outside function: x =", x)  # Accessing global variable
+print("Outside function: y =", y)  # This will raise an error since y is a local variable and cannot be accessed outside the function
+```
+12. **if __name__ == '__main__':** 
+- The `if __name__ == '__main__':` statement is used in Python to allow a script to be executed directly as a standalone program, or imported as a module into another program. 
+
+When the Python interpreter reads a source file, it sets a special variable called `__name__` to have a value `'__main__'` if the file is being run as the main program. If the file is being imported from another module, `__name__` will be set to the module's name.
+
+Using `if __name__ == '__main__':` allows you to separate the code that should be run when the script is executed directly from the code that should only run when the script is imported as a module.
+
+Example:
+
+```python
+def main():
+    print("This is the main function.")
+
+if __name__ == '__main__':
+    main()
+```
+
+In this example, the `main()` function will only be executed if the script is run directly. If the script is imported as a module into another script, the `main()` function will not be executed.
